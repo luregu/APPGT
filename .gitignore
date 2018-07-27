@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
@@ -15,6 +16,18 @@ npm-debug.log*
 .idea/
 .ionic/
 .sourcemaps/
+=======
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+
+# Ionic
+.idea/
+>>>>>>> 7dd328f9d4ccab33621abd3c0d173409b2e1a936
 .sass-cache/
 .tmp/
 .versions/
@@ -23,6 +36,10 @@ dist/
 node_modules/
 tmp/
 temp/
+<<<<<<< HEAD
+=======
+hooks/
+>>>>>>> 7dd328f9d4ccab33621abd3c0d173409b2e1a936
 platforms/
 plugins/
 plugins/android.json
@@ -30,6 +47,13 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 
+<<<<<<< HEAD
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+=======
+.sourcemaps/
+
+.DS_Store
+Thumbs.db
+>>>>>>> 7dd328f9d4ccab33621abd3c0d173409b2e1a936
