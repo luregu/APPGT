@@ -7,12 +7,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { ListTasksPage } from '../pages/list-tasks/list-tasks';
+import { TasksServices } from '../services/tasks.service';
+import { DetailTaskPage } from '../pages/detail-task/detail-task';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ListTasksPage,
+    DetailTaskPage
+
   ],
   imports: [
     BrowserModule,
@@ -22,12 +28,15 @@ import { LoginPage } from '../pages/login/login';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ListTasksPage,
+    DetailTaskPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TasksServices
   ]
 })
 export class AppModule {}
