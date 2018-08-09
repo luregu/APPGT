@@ -25,6 +25,9 @@ export class ListTasksPage {
   public goToDetail(id){
     this.navCtrl.push(DetailTaskPage,{id:id} );
   } 
+  public createTask(){
+    this.navCtrl.push(DetailTaskPage,{id:0});
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListTasksPage');

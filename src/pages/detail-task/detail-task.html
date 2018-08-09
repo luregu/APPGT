@@ -24,7 +24,11 @@
       <ion-textarea  [(ngModel)]="task.description"></ion-textarea>
     </ion-item>
     <ion-item>
-      <button ion-button full>Guardar Tarea</button>
+      <button ion-button full (click)="saveTask()">Guardar Tarea</button>
     </ion-item>
+    <ion-item>
+      <button ion-button full (click)="deleteTask()" color="danger">Eliminar Tarea</button>
+    </ion-item>
+
   </ion-list>
 </ion-content>
