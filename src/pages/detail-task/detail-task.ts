@@ -19,11 +19,35 @@ export class DetailTaskPage {
   id = null;
   constructor(public navCtrl: NavController, public navParams: NavParams, public taskService:TasksServices) {
     this.id = navParams.get('id');
-    this.task = taskService.getNote(this.id);
+    if(this.id != 0){
+      this.task = taskService.getTask(this.id);      
+    }
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailTaskPage');
+  }
+
+  public saveTask(){
+    if (this.id != 0) {
+      console.log('Editando una tarea');
+        this.taskService.editTask(this.task);
+        alert('Tarea modificada con exito');
+       }
+    else{
+      console.log('Guardando una tarea');
+      this.task.id = Date.now();
+      this.taskService.createTask(this.task);
+      alert('Tarea creada con exito');
+    }  
+    this.navCtrl.pop();
+  }
+
+  public deleteTask() {
+    console.log('Eliminando una tarea');
+    this.taskService.deleteTask(this.task);
+    this.navCtrl.pop();
   }
 
 }
