@@ -19,7 +19,8 @@ export class ListTasksPage {
   @ViewChild('myNav') nav: NavController;
   tasks = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public tasksService: TasksServices) {
-    this.tasks = tasksService.getTasks();
+      this.tasksService.getTasks().subscribe(Tareas=> { this.tasks=Tareas; });
+
   }
 
   public goToDetail(id){
