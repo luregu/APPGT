@@ -15,12 +15,13 @@ import { TasksServices } from '../../services/tasks.service';
   templateUrl: 'detail-task.html',
 })
 export class DetailTaskPage {
-  task = {id:null, title:null, description:null};
+  task = {};
   id = null;
   constructor(public navCtrl: NavController, public navParams: NavParams, public taskService:TasksServices) {
     this.id = navParams.get('id');
     if(this.id != 0){
-      this.task = taskService.getTask(this.id);      
+      //this.task = taskService.getTask(this.id);      
+      taskService.getTask(this.id).subscribe(task => this.task = task );
     }
     
   }
