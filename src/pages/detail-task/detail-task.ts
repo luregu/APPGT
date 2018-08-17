@@ -38,7 +38,7 @@ export class DetailTaskPage {
        }
     else{
       console.log('Guardando una tarea');
-      this.task.id = Date.now();
+      this.id = Date.now();
       this.taskService.createTask(this.task);
       alert('Tarea creada con exito');
     }  
