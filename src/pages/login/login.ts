@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { User } from '../../models/user';
+import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,11 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = {} as User;
+
+  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+async login(user: User) {
+  try {
+    const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);    
+    if (result) {
+      this.navCtrl.setRoot('HomePage');
+    }
+    else{
+      alert("Error al logear");
+      console.error("Error al logear");  
+    }
+  } catch (error) {
+    alert("Error al logear " + error.message);
+    console.error("Error al logear" + error.message);
+    
   }
+}
+
+/**
+ * register
+ */
+public register() {
+  this.navCtrl.push('RegisterPage');
+}
 
 }
