@@ -25,7 +25,7 @@ async login(user: User) {
   try {
     const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);    
     if (result) {
-      this.navCtrl.setRoot('HomePage');
+      this.navCtrl.setRoot('GeolocationPage');
     }
     else{
       alert("Error al logear");
