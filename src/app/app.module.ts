@@ -13,6 +13,9 @@ import { DetailTaskPage } from '../pages/detail-task/detail-task';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { Geolocation } from "@ionic-native/geolocation";
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA0UhW0TltoirXwtY1S1tNa-gx0iwJhql8",
@@ -49,7 +52,9 @@ export const firebaseConfig = {
     SplashScreen,
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TasksServices
+    TasksServices,
+    Geolocation,
+    LaunchNavigator
   ]
 })
 export class AppModule {}
